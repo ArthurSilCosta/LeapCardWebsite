@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Card System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-id-card"></i> Leap Card System</h1>
+        </header>
+
+        <main>
+            <!-- Just to create the buttons at first-->
+            <div id="initialOptions">
+                <button class="tab-button" id="showSignup">Sign Up</button>
+                <button class="tab-button" id="showLogin">Login</button>
+            </div>
+
+            <!--  Sign Up from creation-->
+            <div id="signup" class="tab-content hidden">
+                <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+                <form id="registerForm">
+                    <input type="text" name="first_name" placeholder="First Name" required pattern="^[A-Za-z\s]{2,50}$" title="First name should only contain letters and be between 2-50 characters.">
+                    <input type="text" name="last_name" placeholder="Last Name" required pattern="^[A-Za-z\s]{2,50}$" title="Last name should only contain letters and be between 2-50 characters.">
+                    <input type="number" name="age" placeholder="Age" required min="12" max="120" title="Age must be between 12 and 120.">
+                    <input type="email" name="email" placeholder="Email" required title="Enter a valid email address.">
+                    <input type="text" name="phone_number" placeholder="Phone Number" required pattern="^\+?[0-9]{10}$" title="Enter a valid phone number with 10 digits.">
+                    <input type="text" name="eircode" placeholder="Eircode" required pattern="^[A-Za-z0-9]{6}$" title="Enter a valid Eircode (alphanumeric, 6 characters).">
+                    <input type="text" name="address" placeholder="Address" required pattern="^[A-Za-z0-9\s,.'-]{5,100}$" title="Enter a valid address (5-100 characters).">
+                    <input type="text" name="city" placeholder="City" required pattern="^[A-Za-z\s]{2,50}$" title="City name should only contain letters and be between 2-50 characters.">
+                    <input type="text" name="country" placeholder="Country" required pattern="^[A-Za-z\s]{2,50}$" title="Country name should only contain letters and be between 2-50 characters.">
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Register</button>
+                </form>
+                <button class="switch-button" id="goToLogin">Go to Login</button>
+            </div>
+               <!--  login with hidden tab-->
+            <div id="login" class="tab-content hidden">
+                <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                <form id="loginForm"> <!-- text inside login input section-->
+                    <input type="text" name="identifier" placeholder="Email or Tracking Number" required title="Enter your email or tracking number.">
+                    <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </form>
+                <button class="switch-button" id="goToSignup">Go to Sign Up</button>
+            </div>
+            
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

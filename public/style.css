@@ -1,0 +1,203 @@
+/* General settings for the body to set font, layout, and background */
+body {
+    font-family: 'Roboto', sans-serif; /* Use a clean and modern font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4a90e2, #50c878); /* Gradient background for a sleek look */
+    overflow: hidden; /* Hide scrollbars if content overflows */
+    height: 100vh; /* Make body take the full viewport height */
+    display: flex; /* Center align content using Flexbox */
+    justify-content: center;
+    align-items: center;
+    color: white; /* White text for good contrast with the background */
+}
+
+/* Styling for the main container */
+.container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 30px;
+    border-radius: 15px; /* Smooth corners for the container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for a lifted effect */
+    text-align: center; /* Center align all text inside */
+    width: 90%; /* Responsive width for smaller screens */
+    max-width: 400px; /* Cap the width on larger screens */
+}
+
+/* Decorative floating circles around the container */
+.container::before,
+.container::after {
+    content: ''; /* Empty content for pseudo-elements */
+    position: absolute;
+    border-radius: 50%; /* Make them circular */
+    background: rgba(255, 255, 255, 0.1); /* Very light white for subtle decoration */
+    z-index: -1; /* Place behind the container */
+}
+
+.container::before {
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    animation: float 6s ease-in-out infinite; /* Gentle floating animation */
+}
+
+.container::after {
+    bottom: -50px;
+    right: -50px;
+    width: 140px;
+    height: 150px;
+    animation: float 8s ease-in-out infinite; /* Slightly different float for variation */
+}
+
+/* Keyframes for the floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateY(20px); /* Float slightly up */
+    }
+}
+
+/* Header styling for the main title */
+header h1 {
+    font-size: 2.5rem; /* Large, bold heading */
+    color: white;
+    margin: 0 0 20px; /* Add spacing below the header */
+    display: flex;
+    align-items: center; /* Center-align content vertically */
+    justify-content: center; /* Center-align content horizontally */
+    gap: 10px; /* Add spacing between elements in the header */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for readability on gradients */
+}
+
+/* Tabs layout */
+.tabs {
+    display: flex; /* Align tabs horizontally */
+    justify-content: center; /* Center the tabs */
+    margin: 20px 0;
+    gap: 20px; /* Space between each tab button */
+}
+
+/* Individual tab button styling */
+.tab-button {
+    padding: 12px 25px; /* Add padding for a larger clickable area */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-weight: bold; /* Make the text stand out */
+    border: 2px solid transparent; /* Border is hidden by default */
+    background-color: #007BFF; /* Bright blue background */
+    color: white;
+    border-radius: 10px; /* Rounded edges for the button */
+    cursor: pointer; /* Indicate the button is clickable */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 15px 0;
+}
+
+/* Hover effect for the tab buttons */
+.tab-button:hover {
+    background-color: #0056b3; /* Darker blue */
+    border: 2px solid #ffffff; /* White border */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* Styling for the active tab button */
+.tab-button.active {
+    background-color: #0056b3; /* Highlighted blue for active state */
+    border: 2px solid #ffffff; /* White border to stand out */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Styling for tab content sections */
+.tab-content {
+    display: none; /* Hide all content by default */
+    text-align: left; /* Left-align the text inside */
+    animation: fadeIn 0.3s; /* Smooth fade-in effect */
+}
+
+/* Show active tab content */
+.tab-content.active {
+    display: block; /* Display only active content */
+}
+
+/* Explicitly hide elements with the hidden class */
+.hidden {
+    display: none;
+}
+
+/* Forms styling */
+form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Input field styling */
+input {
+    width: 100%; /* Full width input fields */
+    max-width: 350px; /* Restrict width on larger screens */
+    padding: 12px;
+    margin-bottom: 10px; /* Spacing between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded edges */
+    font-size: 1rem;
+}
+
+/* Highlight input on focus */
+input:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Glow effect */
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth animations */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 100%; /* Full-width button */
+    margin-top: 10px; /* Add spacing above the button */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Button active state */
+button:active {
+    transform: translateY(0); /* Reset movement */
+}
+
+/* Fade-in animation for tab content */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        opacity: 1; /* Fade to fully visible */
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .tab-button {
+        width: 100%; /* Full-width tab buttons */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Smaller font size for the header */
+    }
+}
